@@ -1,4 +1,4 @@
-package com.pipi.study.net.chapter6;
+package com.pipi.study.net.chapter6.test;
 
 import java.io.BufferedInputStream;
 import java.io.FileOutputStream;

@@ -1,4 +1,4 @@
-package com.pipi.study.net.chapter6;
+package com.pipi.study.net.chapter6.test;
 
 import java.io.BufferedInputStream;
 import java.io.IOException;
@@ -8,16 +8,16 @@ import java.io.Reader;
 import java.net.URL;
 import java.net.URLConnection;
 
-public class EncodingAwareSourceViewer {
+public class GetLastResource {
 
-	public static void main(String[] args) {
+	public static void main(String[] args) throws IOException {
 		String encoding = "ISO-8859-1";
 		try {
 			URL url = new URL("http://naver.com");
 			URLConnection conn = url.openConnection();
+			conn.setUseCaches(false);	//캐쉬를 타지 않고 서버에서 새롭게 데이터를 받아온다.
 			
 			String contentType = conn.getContentType();
-			System.out.println("http://naver.com's content type is = "+contentType); //http://naver.com's content type is = text/html; charset=UTF-8
 			int encodingStart = contentType.indexOf("charset=");
 			
 			if(encodingStart != -1) {

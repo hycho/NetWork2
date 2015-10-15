@@ -2,7 +2,7 @@
  * URLConnection을 통해서 POST로 데이터를 전송 하는 예제.
  */
 
-package com.pipi.study.net.chapter6;
+package com.pipi.study.net.chapter6.test;
 
 import java.io.BufferedInputStream;
 import java.io.BufferedOutputStream;
