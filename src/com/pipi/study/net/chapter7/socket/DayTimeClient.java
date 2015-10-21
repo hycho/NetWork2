@@ -14,7 +14,7 @@ public class DayTimeClient {
 		
 		try {
 			socket = new Socket(hostname, 13);
-			socket.setSoTimeout(15000); //만약 15초동안 아무런 연결을 하지 못할 경우 SocketTimeoutException 예외를 발생시킨다.
+			socket.setSoTimeout(15000);
 			InputStream in = socket.getInputStream();
 			StringBuilder time = new StringBuilder();
 			InputStreamReader reader = new InputStreamReader(in);
