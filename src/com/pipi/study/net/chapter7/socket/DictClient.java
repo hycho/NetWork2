@@ -33,7 +33,12 @@ public class DictClient {
 			InputStream in = socket.getInputStream();
 			BufferedReader reader = new BufferedReader(new InputStreamReader(in));
 			
+			// 한라인씩 서버로 내용을 보내고, 서버로부터 응답을 한 라인씩 읽기 위해 기다리고 읽어서 출력한다.
 			behive("gold", writer, reader);
+			System.out.println("");
+			behive("pc", writer, reader);
+			System.out.println("");
+			behive("love", writer, reader);
 			
 			writer.write("quit\r\n");
 			writer.flush();
