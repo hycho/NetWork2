@@ -38,7 +38,6 @@ public class TestSocketAddress {
 		} catch (IOException e){
 			System.err.println(e);
 		}
-		
 	}
 
 }

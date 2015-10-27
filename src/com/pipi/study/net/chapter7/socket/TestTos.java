@@ -3,22 +3,23 @@ package com.pipi.study.net.chapter7.socket;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
-import java.net.InetSocketAddress;
-import java.net.Proxy;
 import java.net.Socket;
-import java.net.SocketAddress;
+import java.net.UnknownHostException;
 
-public class TestProxySocks {
-
+public class TestTos {
 	public static void main(String[] args) {
+		Socket s;
 		try {
-			SocketAddress proxyAddress = new InetSocketAddress("109.131.85.93", 27469);
-			Proxy proxy = new Proxy(Proxy.Type.SOCKS, proxyAddress);
-			Socket s = new Socket(proxy);
-			SocketAddress time = new InetSocketAddress("time.nist.gov", 13);
-			s.connect(time);
+			s = new Socket("time.nist.gov", 13);
+			s.setTrafficClass(0x26); // 10111000
+			int c = 0x26;
+			System.out.println(c);
 			behive(s);
+		} catch (UnknownHostException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
 		} catch (IOException e) {
+			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 	}
@@ -34,9 +35,8 @@ public class TestProxySocks {
 			}
 
 			System.out.println(payload.toString());
-		} catch (IOException e){ 
+		} catch (IOException e){
 			System.err.println(e);
 		}
 	}
-
 }
